@@ -32,7 +32,7 @@ puts '4. Checkout'
 puts "\nSpecial Offer: Buy one Red Widget, get the second one at half price!"
 puts "Delivery charges apply: $4.95 for orders under $50, $2.95 for orders between $50 and $90, free for orders over $90."
 loop do
-  print "\nEnter product number to add to basket (or type 'done' to checkout): "
+  print "\nEnter product number to add to basket or press 4 to checkout: "
   input = gets.chomp.upcase
 
   break if input == "4"
