@@ -9,7 +9,7 @@ class Basket
 
   def add_product(code)
     product = @catalogue.fetch_product(code)
-    raise "Product with the given code: #{code} not found." unless product
+    raise ArgumentError, "Product with the given code: #{code} not found." unless product
 
     @items << product
   end
@@ -22,7 +22,7 @@ class Basket
     end
 
     subtotal = discounted_items.sum(&:price)
-    delivery = @delivery_rule.apply(subtotal)
+    delivery = @delivery_rule.calculate(subtotal)
     (subtotal + delivery).round(2)
   end
 end

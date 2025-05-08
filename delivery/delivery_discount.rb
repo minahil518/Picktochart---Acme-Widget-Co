@@ -1,7 +1,7 @@
 require_relative '../interfaces/delivery_rule'
 
 class DeliveryDiscount < DeliveryRule
-  def apply(subtotal)
+  def calculate(subtotal)
     if subtotal < 50
       4.95
     elsif subtotal < 90
