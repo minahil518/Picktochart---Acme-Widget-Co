@@ -15,6 +15,11 @@ class Basket
   end
 
   def total_cart_price
-    # Calculate the total price of the items in the basket
-  end
+    discounted_items = @offers.inject(@items.dup) do |items, offer|
+      offer.apply(items)
+    end
+
+    subtotal = discounted_items.sum(&:price)
+    delivery = @delivery_rule.apply(subtotal)
+    (subtotal + delivery).round(2)
 end
