@@ -101,7 +101,10 @@ The project includes several test cases written using the Minitest framework. Th
 
 
 ### Sample for Command Line Interface:
-<img width="1013" alt="image" src="https://github.com/user-attachments/assets/c901acc7-7c27-4ba5-8c32-6e9a66440db7" />
+1. <img width="1013" alt="image" src="https://github.com/user-attachments/assets/23e56381-812c-430e-bdea-1e7f78122c53" />
+
+2. <img width="1011" alt="image" src="https://github.com/user-attachments/assets/539d704d-fc40-4531-b4f5-8c35ba2dee35" />
+
 
 
 
