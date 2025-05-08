@@ -24,13 +24,13 @@ class BasketTest < Minitest::Test
   def test_total_with_no_offers
     @basket.add_product('B01')
     @basket.add_product('B01')
-    assert_in_delta 20.85, @basket.total_cart_price, 0.01
+    assert_in_delta 20.85, @basket.total_cart_details[:total_price], 0.01
   end
 
   def test_total_with_offer_applied
     @basket.add_product('R01')
     @basket.add_product('R01')
-    assert_in_delta 54.37, @basket.total_cart_price, 0.02
+    assert_in_delta 54.37, @basket.total_cart_details[:total_price], 0.02
   end
 
   def test_invalid_product_raises_error

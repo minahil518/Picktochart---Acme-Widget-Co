@@ -56,8 +56,12 @@ loop do
 end
 
 
-if basket.total_cart_price.zero?
+cart_details = basket.total_cart_details
+total_price = cart_details[:total_price]
+delivery_charge = cart_details[:delivery_charge]
+if total_price.zero?
   puts "Your basket is empty. Total: $0.00"
 else
-  puts "Total: $#{'%.2f' % basket.total_cart_price}"
+  puts "Total: $#{'%.2f' % total_price}"
+  puts "Delivery Charges Applied: $#{'%.2f' % delivery_charge}"
 end

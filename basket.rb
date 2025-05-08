@@ -14,15 +14,22 @@ class Basket
     @items << product
   end
 
-  def total_cart_price
-    return 0.0 if @items.empty?
+
+  def total_cart_details
+    return { total_price: 0.0, delivery_charge: 0.0 } if @items.empty?
 
     discounted_items = @offers.inject(@items.dup) do |items, offer|
-      offer.apply(items)
+      result = offer.apply(items)
+      result
     end
 
     subtotal = discounted_items.sum(&:price)
     delivery = @delivery_rule.calculate(subtotal)
-    (subtotal + delivery).round(2)
+    total_price = (subtotal + delivery).round(2)
+
+    {
+      total_price: total_price,
+      delivery_charge: delivery.round(2),
+    }
   end
 end
