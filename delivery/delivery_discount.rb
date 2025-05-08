@@ -1,11 +1,10 @@
 require_relative '../interfaces/delivery_rule'
 
-class TieredDelivery < DeliveryRule
+class DeliveryDiscount < DeliveryRule
   def apply(subtotal)
-    case subtotal
-    when 0...50
+    if subtotal < 50
       4.95
-    when 50...90
+    elsif subtotal < 90
       2.95
     else
       0.0

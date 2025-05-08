@@ -4,14 +4,14 @@ class Catalogue
     @products = products.index_by(&:code)
   end
 
-  def fetch(code)
+  def fetch_product(code)
     @products[code]
   end
 end
 
-# A helper method that will convert an array of objects into a hash.
-
-  def index_by
-    map { |e| [yield(e), e] }.to_h
+  class Array
+    # A helper method that will convert an array of objects into a hash.
+    def index_by
+      map { |e| [yield(e), e] }.to_h
+    end
   end
-end

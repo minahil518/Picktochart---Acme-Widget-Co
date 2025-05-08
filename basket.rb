@@ -8,13 +8,15 @@ class Basket
   end
 
   def add_product(code)
-    product = @catalogue.find(code)
+    product = @catalogue.fetch_product(code)
     raise "Product with the given code: #{code} not found." unless product
 
     @items << product
   end
 
   def total_cart_price
+    return 0.0 if @items.empty?
+
     discounted_items = @offers.inject(@items.dup) do |items, offer|
       offer.apply(items)
     end
@@ -22,4 +24,5 @@ class Basket
     subtotal = discounted_items.sum(&:price)
     delivery = @delivery_rule.apply(subtotal)
     (subtotal + delivery).round(2)
+  end
 end

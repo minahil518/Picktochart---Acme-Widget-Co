@@ -18,7 +18,7 @@ class BuyOneHalfOff < OfferStrategy
     half_price_items.each do |item|
       idx = updated_products.index(item)
       updated_products.delete_at(idx)
-      updated_products << Product.new(code: item.code, name: item.title, price: item.price / 2)
+      updated_products << Product.new(code: item.code, title: item.title, price: item.price / 2)
     end
     updated_products
   end
