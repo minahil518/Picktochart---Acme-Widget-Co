@@ -100,5 +100,8 @@ The project includes several test cases written using the Minitest framework. Th
   5. Basket: Ensure that add product funcationality works fine and total cart price is calculated correctly.
 
 
+### Sample for Command Line Interface:
+<img width="1013" alt="image" src="https://github.com/user-attachments/assets/c901acc7-7c27-4ba5-8c32-6e9a66440db7" />
+
 
 
